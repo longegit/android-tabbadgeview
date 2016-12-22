@@ -3,19 +3,14 @@ package net.itgoo.tabbadgeview;
 import android.app.Activity;
 import android.content.Context;
 import android.content.IntentFilter;
-import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
-import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -76,12 +71,12 @@ public class TabBadgeView extends FrameLayout {
     }
 
     /**
-     * 设置Badge数值
-     * @param count
+     * 设置Badge
+     * @param badge
      */
-    public void setBadgeCount(int count) {
-        mBadgeView.setText(String.valueOf(count));
-        if (count == 0) {
+    public void setBadgeCount(String badge) {
+        mBadgeView.setText(badge);
+        if (TextUtils.isEmpty(badge)) {
             mBadgeView.hide();
         } else {
             mBadgeView.show();

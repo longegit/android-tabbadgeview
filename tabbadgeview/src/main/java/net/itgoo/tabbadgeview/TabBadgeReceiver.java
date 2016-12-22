@@ -11,7 +11,7 @@ public class TabBadgeReceiver extends BroadcastReceiver {
 
     public static final String TAB_BADGE_FLAG_KEY = "flag";
 
-    public static final String TAB_BADGE_CHANGE_COUNT_EXTRA_KEY = "badge_count";
+    public static final String TAB_BADGE_CHANGE_COUNT_EXTRA_KEY = "badge";
 
     private TabBadgeView mTabBadgeView;
 
@@ -22,11 +22,11 @@ public class TabBadgeReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (ACTION_TAB_BADGE_CHANGE.equals(intent.getAction())) {
-            int count = intent.getIntExtra(TAB_BADGE_CHANGE_COUNT_EXTRA_KEY, 0);
+            String badge = intent.getStringExtra(TAB_BADGE_CHANGE_COUNT_EXTRA_KEY);
             String flag = intent.getStringExtra(TAB_BADGE_FLAG_KEY);
 
             if (flag != null && flag.equals(mTabBadgeView.getFlag())) {
-                mTabBadgeView.setBadgeCount(count);
+                mTabBadgeView.setBadgeCount(badge);
             }
         }
     }
