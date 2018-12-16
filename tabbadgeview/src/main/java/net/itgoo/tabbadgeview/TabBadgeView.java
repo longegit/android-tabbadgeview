@@ -55,7 +55,6 @@ public class TabBadgeView extends FrameLayout {
         mFlag = flag;
 
         View view = LayoutInflater.from(getContext()).inflate(R.layout.view_tab_badge_view, this, true);
-        View imageFrameView = view.findViewById(R.id.view_tab_badge_view_image_frame_view);
         ImageView imageView = (ImageView) view.findViewById(R.id.view_tab_badge_view_iv);
         TextView textView = (TextView) view.findViewById(R.id.view_tab_badge_view_tv);
         imageView.setImageDrawable(drawable);
@@ -63,7 +62,7 @@ public class TabBadgeView extends FrameLayout {
 
         int horizontalMargin = getResources().getDimensionPixelSize(R.dimen.tab_badge_view_horizontal_margin);
         int verticalMargin = getResources().getDimensionPixelSize(R.dimen.tab_badge_view_vertical_margin);
-        mBadgeView = new BadgeView(getContext(), imageFrameView);
+        mBadgeView = new BadgeView(getContext(), imageView);
         mBadgeView.setBadgeMargin(horizontalMargin, verticalMargin);
 
         registerReceiver();
