@@ -2,4 +2,6 @@
     <!--距离-->
     <dimen name="tab_badge_view_title_size">12sp</dimen>
     <dimen name="tab_badge_view_title_image_padding">2dp</dimen>
+    <dimen name="tab_badge_view_horizontal_margin">10dp</dimen>
+    <dimen name="tab_badge_view_vertical_margin">2dp</dimen>
 </resources>
